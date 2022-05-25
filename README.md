@@ -1,3 +1,5 @@
+ <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" />
+
 # Project goals
 
 Creating a found raiser portal in order to help Ukraine. Done on request of [Uniters (United Volunteers) ngo](https://spis.ngo.pl/355390-fundacja-uniters-united-volunteers).
