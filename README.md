@@ -1,4 +1,11 @@
- <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" />
+<a target="_blank" rel="noopener noreferrer" href="https://vercel.com?utm_source=next-auth&utm_campaign=oss">
+  <img
+    alt="Powered by Vercel"
+    style="margin-top: 8px"
+    height="32"
+    src="https://raw.githubusercontent.com/nextauthjs/next-auth/canary/www/static/img/powered-by-vercel.svg"
+  />
+</a>
 
 # Project goals
 
