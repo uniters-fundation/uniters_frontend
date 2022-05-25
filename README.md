@@ -1,6 +1,3 @@
-Staging: https://uniters-ukraine-p7wb9w12t-dawidgaleziewskidev-gmailcom.vercel.app/?fbclid=IwAR0Z6uzV6XLQRIXB3NuYGpA2ZE6O6nbuBmiFkbgH7uUTkKGBMvCqRlkVOfU
-
-
 # Project goals
 
 Creating a found raiser portal in order to help Ukraine. Done on request of [Uniters (United Volunteers) ngo](https://spis.ngo.pl/355390-fundacja-uniters-united-volunteers).
