@@ -1,4 +1,4 @@
-<a target="_blank" rel="noopener noreferrer" href="https://vercel.com?utm_source=next-auth&utm_campaign=oss">
+<a target="_blank" rel="noopener noreferrer" href="https://vercel.com?utm_source=https://github.com/uniters-fundation/uniters_frontend&utm_campaign=help-ukraine">
   <img
     alt="Powered by Vercel"
     style="margin-top: 8px"
