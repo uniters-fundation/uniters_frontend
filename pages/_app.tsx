@@ -10,6 +10,7 @@ import defaultTheme from "../styles/theme/defaultTheme";
 import "../styles/globals.css";
 import { MainAppWrapper } from "../components/MainAppWrapper";
 import { OrderProvider } from "../context/OrderContext";
+import { Footer } from "../components/Footer";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -50,6 +51,7 @@ const MyApp = (props: AppProps & IAdditionalAppProps) => {
             <OrderProvider>
               <MainAppWrapper>
                 <Component {...pageProps} />
+                <Footer />
               </MainAppWrapper>
             </OrderProvider>
           </ThemeProvider>
