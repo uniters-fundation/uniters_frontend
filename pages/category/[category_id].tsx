@@ -117,7 +117,10 @@ const PldgeCategory: NextPage = () => {
                   />
                 </Box>
               </CardContent>
-              <CardActions>
+              <CardActions style={{
+                  minHeight: '60px',
+                  paddingLeft: '20px'
+              }}>
                 <PayPayButton />
               </CardActions>
             </Card>
