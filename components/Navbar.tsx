@@ -13,6 +13,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import HomeIcon from "@mui/icons-material/Home";
+import Image from "next/image";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -128,17 +129,14 @@ export default function Navbar() {
               aria-haspopup="true"
               color="inherit"
             >
-              <HomeIcon />
+              <Image
+                src="/images/logo/uniters_logo_white.png"
+                width="150px"
+                height="50px"
+                alt="uniters"
+              />
             </IconButton>
           </Link>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            Together for Ukraine
-          </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
         </Toolbar>
