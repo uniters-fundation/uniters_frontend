@@ -57,6 +57,7 @@ export default function Navbar() {
     </Menu>
   );
 
+  const backgroundColorTransparent = "rgba(0,0,0,0.5 )";
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
@@ -110,8 +111,14 @@ export default function Navbar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box
+      sx={{ flexGrow: 1 }}
+      // sx={{ backgroundColor: backgroundColorTransparent }}
+    >
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: backgroundColorTransparent }}
+      >
         <Toolbar>
           <Link href="/" passHref>
             <IconButton

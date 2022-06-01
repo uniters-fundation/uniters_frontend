@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import styled from "@emotion/styled";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -18,6 +20,42 @@ import { SelectedCategoryType } from "../../reducers/pledgeFormReducer";
 import { OrderContext } from "../../context/OrderContext";
 import Navbar from "../../components/Navbar";
 import { TaggedImage } from "../../components/TaggedImage";
+const backgroundColorTextArea = "rgba(0,0,0,0.5 )";
+
+const CssTextField = styled(TextField, {
+  shouldForwardProp: (props) => props !== "focusColor",
+})((p) => ({
+  // input label when focused
+  "& label.Mui-focused": {
+    color: "red",
+  },
+  // focused color for input with variant='standard'
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "red",
+  },
+  // focused color for input with variant='filled'
+  "& .MuiFilledInput-underline:after": {
+    borderBottomColor: "red",
+  },
+  // focused color for input with variant='outlined'
+  "& .MuiOutlinedInput-root": {
+    "&.Mui-focused fieldset": {
+      borderColor: "red",
+    },
+  },
+  "&.Mui-focused .MuiInputAdornment-root .MuiTypography-root": {
+    color: "red",
+  },
+
+  outlinedInput: {
+    "&:hover .MuiInputAdornment-root .MuiSvgIcon-root": {
+      color: "red",
+    },
+    "&.Mui-focused .MuiInputAdornment-root .MuiSvgIcon-root": {
+      color: "red",
+    },
+  },
+}));
 
 const PldgeCategory: NextPage = () => {
   const {
@@ -81,7 +119,10 @@ const PldgeCategory: NextPage = () => {
         </Typography>
         <Grid container spacing={{ md: 2 }} mt={4} pb={10}>
           <Grid item xs={12} md={6} mb={2}>
-            <Card variant="outlined">
+            <Card
+              variant="outlined"
+              sx={{ backgroundColor: backgroundColorTextArea, color: "white" }}
+            >
               <CardContent>
                 <Typography variant="h5" component="div">
                   Thank you for your donations!
@@ -102,40 +143,57 @@ const PldgeCategory: NextPage = () => {
                     onChange={handleChange}
                   />
 
-                  <TextField
-                    label="You will donate"
+                  <CssTextField
+                    label="DONATE AMMOUNT"
                     id="outlined-start-adornment"
-                    sx={{ m: 1, width: "25ch" }}
+                    sx={{
+                      m: 1,
+                      width: "25ch",
+                      input: { color: "red" },
+                      label: { color: "red", borderColor: "red" },
+                      outlineColor: "red",
+                      color: "red",
+                      borderColor: "red",
+                    }}
                     InputProps={{
                       type: "numer",
                       onChange: handleChange,
                       value: ammountToPledge,
                       startAdornment: (
-                        <InputAdornment position="start">$</InputAdornment>
+                        <InputAdornment
+                          sx={{ color: "white" }}
+                          position="start"
+                        >
+                          <AttachMoneyIcon />
+                        </InputAdornment>
                       ),
                     }}
                   />
                 </Box>
               </CardContent>
-              <CardActions style={{
-                  minHeight: '60px',
-                  paddingLeft: '20px'
-              }}>
+              <CardActions
+                style={{
+                  minHeight: "60px",
+                  paddingLeft: "20px",
+                }}
+              >
                 <PayPayButton />
               </CardActions>
             </Card>
           </Grid>
           <Grid item xs={12} md={6} mb={2}>
-            <Card variant="outlined">
-              <CardContent>
-                <Typography variant="body2">
-                  Money donated will be used to help Ukrainian {category_id}
-                </Typography>
-                <TaggedImage
-                  variant={category_id as SelectedCategoryType}
-                  selectedPrice={ammountToPledge}
-                />
-              </CardContent>
+            <Card
+              variant="outlined"
+              sx={{
+                backgroundColor: backgroundColorTextArea,
+                color: "white",
+                padding: 0,
+              }}
+            >
+              <TaggedImage
+                variant={category_id as SelectedCategoryType}
+                selectedPrice={ammountToPledge}
+              />
             </Card>
           </Grid>
         </Grid>

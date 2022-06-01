@@ -13,19 +13,23 @@ interface IProps {
   targetURL: string;
 }
 
+const backgroundColorTextArea = "rgba(0,0,0,0.5 )";
+
 export default function ActionAreaCard(props: IProps) {
   return (
     <Link href={props.targetURL} passHref>
       <a>
-        <Card>
-          <CardActionArea>
+        <Card sx={{ backgroundColor: backgroundColorTextArea }}>
+          <CardActionArea sx={{ backgroundColor: backgroundColorTextArea }}>
             <CardMedia
               component="img"
               height="100%"
               image={props.imgURL}
               alt={props.title}
             />
-            <CardContent>
+            <CardContent
+              sx={{ backgroundColor: backgroundColorTextArea, color: "white" }}
+            >
               <Typography
                 align="center"
                 gutterBottom
