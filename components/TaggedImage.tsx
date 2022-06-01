@@ -34,12 +34,14 @@ enum CiviliansItemTags {
   HAT = "hat",
   SKIRT = "skirt",
   BLAUSE = "blause",
+  SWETER = "sweter",
   CAP = "cap",
   JACKET = "jacket",
   TENT = "tent",
   COOKING = "cooking",
   WHIRPOOL = "whirpool",
   FRIDGER = "fridger",
+  ELECTRIC_OVEN = "electric_oven",
   OVEN = "oven",
   STROLLER = "stroller",
 }
@@ -218,7 +220,7 @@ export const civiliansPricesSettings: ICiviliansTagsSettings = {
     price: 50,
     url: `${ITEMS_CIVILIANS_DIR}/50_girbezrekawnik.png`,
   },
-  [CiviliansItemTags.JACKET]: {
+  [CiviliansItemTags.SWETER]: {
     price: 60,
     url: `${ITEMS_CIVILIANS_DIR}/60_girl_sweter.png`,
   },
@@ -230,9 +232,15 @@ export const civiliansPricesSettings: ICiviliansTagsSettings = {
     price: 140,
     url: `${ITEMS_CIVILIANS_DIR}/140_girl_namioti.png`,
   },
-  [CiviliansItemTags.OVEN]: {
+  [CiviliansItemTags.ELECTRIC_OVEN]: {
     price: 160,
     url: `${ITEMS_CIVILIANS_DIR}/160_girl_kuchenka.png`,
+    position: {
+      zIndex: 4,
+      left: "10%",
+      top: "10%",
+      translate: ["-50%", "-50%"],
+    },
   },
   [CiviliansItemTags.WHIRPOOL]: {
     price: 180,
@@ -241,6 +249,12 @@ export const civiliansPricesSettings: ICiviliansTagsSettings = {
   [CiviliansItemTags.FRIDGER]: {
     price: 200,
     url: `${ITEMS_CIVILIANS_DIR}/200_girl_lodowka.png`,
+    position: {
+      zIndex: 4,
+      left: "10%",
+      top: "20%",
+      translate: ["-50%", "-50%"],
+    },
   },
   [CiviliansItemTags.OVEN]: {
     price: 500,
@@ -249,6 +263,12 @@ export const civiliansPricesSettings: ICiviliansTagsSettings = {
   [CiviliansItemTags.STROLLER]: {
     price: 1000,
     url: `${ITEMS_CIVILIANS_DIR}/1000_girl_wozek.png`,
+    position: {
+      zIndex: 4,
+      left: "10%",
+      top: "60%",
+      translate: ["-50%", "-50%"],
+    },
   },
 };
 
