@@ -141,6 +141,7 @@ const PldgeCategory: NextPage = () => {
                     max={4000}
                     valueLabelDisplay="auto"
                     onChange={handleChange}
+                    sx={{ color: "red" }}
                   />
 
                   <CssTextField
