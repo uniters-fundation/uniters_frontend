@@ -28,9 +28,26 @@ enum ArmyItemTags {
   TERMOVISION = "termowizor",
 }
 
-const ITEMS_DIR = "/images/tags/defenders";
+enum CiviliansItemTags {
+  GIRL = "girl",
+  TOY = "toy",
+  HAT = "hat",
+  SKIRT = "skirt",
+  BLAUSE = "blause",
+  CAP = "cap",
+  JACKET = "jacket",
+  TENT = "tent",
+  COOKING = "cooking",
+  WHIRPOOL = "whirpool",
+  FRIDGER = "fridger",
+  OVEN = "oven",
+  STROLLER = "stroller",
+}
 
-type ITagsSettings = Record<
+const ITEMS_DEFENDERS_DIR = "/images/tags/defenders";
+const ITEMS_CIVILIANS_DIR = "/images/tags/civilians";
+
+type IArmyTagsSettings = Record<
   ArmyItemTags,
   {
     price: number;
@@ -46,10 +63,26 @@ type ITagsSettings = Record<
   }
 >;
 
-export const armyPricesSettings: ITagsSettings = {
+type ICiviliansTagsSettings = Record<
+  CiviliansItemTags,
+  {
+    price: number;
+    url: string | null;
+    position?: {
+      zIndex?: number;
+      top?: string | 0;
+      left?: string | 0;
+      right?: string | 0;
+      bottom?: string | 0;
+      translate?: string[];
+    };
+  }
+>;
+
+export const armyPricesSettings: IArmyTagsSettings = {
   [ArmyItemTags.SOLDIER]: {
     price: 0,
-    url: `${ITEMS_DIR}/soldier.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/soldier.png`,
     position: {
       zIndex: 4,
       left: "50%",
@@ -59,51 +92,51 @@ export const armyPricesSettings: ITagsSettings = {
   },
   [ArmyItemTags.HAT]: {
     price: 10,
-    url: `${ITEMS_DIR}/10_soldier_czapka.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/10_soldier_czapka.png`,
   },
   [ArmyItemTags.FLASHLIGHT]: {
     price: 20,
-    url: `${ITEMS_DIR}/20_soldier_latarka.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/20_soldier_latarka.png`,
   },
   [ArmyItemTags.KNEE_ARMOR]: {
     price: 30,
-    url: `${ITEMS_DIR}/30_soldier_nakolanniki.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/30_soldier_nakolanniki.png`,
   },
   [ArmyItemTags.BEDROLL]: {
     price: 40,
-    url: `${ITEMS_DIR}/40_soldier_spiwor.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/40_soldier_spiwor.png`,
   },
   [ArmyItemTags.KNIFE]: {
     price: 50,
-    url: `${ITEMS_DIR}/50_soldier_noz.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/50_soldier_noz.png`,
   },
   [ArmyItemTags.ELBOW_ARMOR]: {
     price: 60,
-    url: `${ITEMS_DIR}/60_soldier_lokcie.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/60_soldier_lokcie.png`,
   },
   [ArmyItemTags.TACTICAL_GLOVES]: {
     price: 70,
-    url: `${ITEMS_DIR}/70_soldier_rekawice.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/70_soldier_rekawice.png`,
   },
   [ArmyItemTags.SHIPPMENT_BOX]: {
     price: 80,
-    url: `${ITEMS_DIR}/80_soldier_ladownica.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/80_soldier_ladownica.png`,
   },
   [ArmyItemTags.BALISTIC_GLASSES]: {
     price: 90,
-    url: `${ITEMS_DIR}/90_soldier_okulary.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/90_soldier_okulary.png`,
   },
   [ArmyItemTags.SHOES]: {
     price: 100,
-    url: `${ITEMS_DIR}/100_soldier_buty.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/100_soldier_buty.png`,
   },
   [ArmyItemTags.BACKPACK]: {
     price: 120,
-    url: `${ITEMS_DIR}/120_soldier_plecak.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/120_soldier_plecak.png`,
   },
   [ArmyItemTags.TENT]: {
     price: 140,
-    url: `${ITEMS_DIR}/140_soldier_namiot.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/140_soldier_namiot.png`,
     // position: { right: 0, bottom: "20%", transition: ["0%", "0%"], zIndex: 2 },
   },
   [ArmyItemTags.SUMMER_ARMY_SUIT]: {
@@ -113,11 +146,11 @@ export const armyPricesSettings: ITagsSettings = {
   },
   [ArmyItemTags.RADIOSTATION]: {
     price: 180,
-    url: `${ITEMS_DIR}/180_soldier_radio.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/180_soldier_radio.png`,
   },
   [ArmyItemTags.HELM]: {
     price: 200,
-    url: `${ITEMS_DIR}/200_soldier_helm.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/200_soldier_helm.png`,
   },
   [ArmyItemTags.MARK]: {
     price: 500,
@@ -125,11 +158,11 @@ export const armyPricesSettings: ITagsSettings = {
   },
   [ArmyItemTags.BULLETPTOF_VEST]: {
     price: 1000,
-    url: `${ITEMS_DIR}/1000_soldier_kamizelka.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/1000_soldier_kamizelka.png`,
   },
   [ArmyItemTags.QADROKOPTER]: {
     price: 1500,
-    url: `${ITEMS_DIR}/1500_soldier_kwadracopter.png`,
+    url: `${ITEMS_DEFENDERS_DIR}/1500_soldier_kwadracopter.png`,
   },
   [ArmyItemTags.SUBMACHINEGUN]: {
     price: 2000,
@@ -141,6 +174,84 @@ export const armyPricesSettings: ITagsSettings = {
   },
 };
 
+// GIRL = "girl",
+// TOY = "toy",
+// HAT = "hat",
+// SKIRT = "skirt",
+// BLAUSE = "blause",
+// CAP = "cap",
+// JACKET = "jacket",
+// TENT = "tent",
+// COOKING = "cooking",
+// WHIRPOOL = "whirpool",
+// FRIDGER = "fridger",
+// OVEN = "oven",
+// STROLLER = "stroller",
+export const civiliansPricesSettings: ICiviliansTagsSettings = {
+  [CiviliansItemTags.GIRL]: {
+    price: 0,
+    url: `${ITEMS_CIVILIANS_DIR}/01_sad_girl.png`,
+    position: {
+      zIndex: 4,
+      left: "50%",
+      top: "60%",
+      translate: ["-50%", "-50%"],
+    },
+  },
+  [CiviliansItemTags.TOY]: {
+    price: 10,
+    url: `${ITEMS_CIVILIANS_DIR}/10_girl_zabawka.png`,
+  },
+  [CiviliansItemTags.HAT]: {
+    price: 20,
+    url: `${ITEMS_CIVILIANS_DIR}/20_girl_czapka.png`,
+  },
+  [CiviliansItemTags.SKIRT]: {
+    price: 30,
+    url: `${ITEMS_CIVILIANS_DIR}/30_girl_suknia.png`,
+  },
+  [CiviliansItemTags.BLAUSE]: {
+    price: 40,
+    url: `${ITEMS_CIVILIANS_DIR}/40_girl_bluzkaspodnica.png`,
+  },
+  [CiviliansItemTags.CAP]: {
+    price: 50,
+    url: `${ITEMS_CIVILIANS_DIR}/50_girbezrekawnik.png`,
+  },
+  [CiviliansItemTags.JACKET]: {
+    price: 60,
+    url: `${ITEMS_CIVILIANS_DIR}/60_girl_sweter.png`,
+  },
+  [CiviliansItemTags.JACKET]: {
+    price: 70,
+    url: `${ITEMS_CIVILIANS_DIR}/70_girl_kurtka.png`,
+  },
+  [CiviliansItemTags.TENT]: {
+    price: 140,
+    url: `${ITEMS_CIVILIANS_DIR}/140_girl_namioti.png`,
+  },
+  [CiviliansItemTags.OVEN]: {
+    price: 160,
+    url: `${ITEMS_CIVILIANS_DIR}/160_girl_kuchenka.png`,
+  },
+  [CiviliansItemTags.WHIRPOOL]: {
+    price: 180,
+    url: `${ITEMS_CIVILIANS_DIR}/180_girl_pralka.png`,
+  },
+  [CiviliansItemTags.FRIDGER]: {
+    price: 200,
+    url: `${ITEMS_CIVILIANS_DIR}/200_girl_lodowka.png`,
+  },
+  [CiviliansItemTags.OVEN]: {
+    price: 500,
+    url: `${ITEMS_CIVILIANS_DIR}/500_girlpirekarnik.png`,
+  },
+  [CiviliansItemTags.STROLLER]: {
+    price: 1000,
+    url: `${ITEMS_CIVILIANS_DIR}/1000_girl_wozek.png`,
+  },
+};
+
 type tagKeysUnionType = `${ArmyItemTags}`;
 
 interface IProps {
@@ -149,14 +260,13 @@ interface IProps {
 }
 
 export const TaggedImage = (props: IProps) => {
-  const itemsKeys = Object.keys(armyPricesSettings).filter(
-    (key) => !!armyPricesSettings[key as tagKeysUnionType].url
-  );
-
   const settings =
     props.variant === SelectedCategoryType.DEFENDERS
       ? armyPricesSettings
-      : null;
+      : civiliansPricesSettings;
+  const itemsKeys = Object.keys(settings).filter(
+    (key) => !!settings[key as tagKeysUnionType].url
+  );
 
   return (
     <ImageHolder>
@@ -166,7 +276,7 @@ export const TaggedImage = (props: IProps) => {
           src={
             props.variant === SelectedCategoryType.DEFENDERS
               ? "/images/tags/defenders/background (1).jpg"
-              : "/images/tags/civilians/girl_0.jpg"
+              : "/images/tags/civilians/bckgrnd00.jpg"
           }
           alt={"background"}
         />
